@@ -8,8 +8,12 @@ export const data = [
     name:"Sunitha"
     },
     {
-        id:3,
-        name:"Priya"
+    id:3,
+    name:"Priya"
+    },
+    {
+    id:4,
+    name:"Raghu"
     }
 
 
