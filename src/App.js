@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, {useState} from 'react';
+import {data} from './data';
+// to use state in react we use useState-->Hook
+//useState is a function
+//useState -->returns an array wth 2 values, 1 is -->Undefined 2-->function
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  const [teams, setTeam] = useState(data);
+  function clearTeam() {
+    setTeam([]);
+  }
+//   const[text, setText] = useState("Microdegree");
+//   function handleClick(){
+//     console.log("Value passed when button cliked");
+    
+//     if(text =="microdegree"){
+//     setText("manikanta");
+//   }else {
+//     setText("microdegree");
+//   }
+// }
+  return(
+//   <>
+//   <h1>{text}</h1>
+//    <button type="button" onClick={handleClick}>Change title </button>
+//   </>
+//  );
+    <>
+      {teams.map((team)=> {
+       return (
+         <div key={team.id}>
+           <h4>{team.name}</h4>
+        </div>
+  );
+})}
+  <button onClick={clearTeam}>clear team</button>
+    </>
   );
 }
-
 export default App;
